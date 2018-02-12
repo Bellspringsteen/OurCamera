@@ -1,0 +1,26 @@
+<annotation>
+	<folder>imagesRaw</folder>
+	<filename>2017-12-21 03:34:56.026902.jpg</filename>
+	<path>/Users/abell/Development/other.nyc/Camera/imagesRaw/2017-12-21 03:34:56.026902.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>352</width>
+		<height>240</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>truck</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>200</xmin>
+			<ymin>142</ymin>
+			<xmax>225</xmax>
+			<ymax>164</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>CameraPhotos</folder>
+	<filename>2017-12-17 00:20:13.013798.jpg</filename>
+	<path>/Volumes/Untitled/CameraPhotos/2017-12-17 00:20:13.013798.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>352</width>
+		<height>240</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>police</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>217</xmin>
+			<ymin>179</ymin>
+			<xmax>279</xmax>
+			<ymax>240</ymax>
+		</bndbox>
+	</object>
+</annotation>

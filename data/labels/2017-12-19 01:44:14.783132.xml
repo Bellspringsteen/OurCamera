@@ -1,0 +1,26 @@
+<annotation>
+	<folder>CameraPhotos</folder>
+	<filename>2017-12-19 01:44:14.783132.jpg</filename>
+	<path>/Volumes/Untitled/CameraPhotos/2017-12-19 01:44:14.783132.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>352</width>
+		<height>240</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bus</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>28</xmin>
+			<ymin>149</ymin>
+			<xmax>125</xmax>
+			<ymax>235</ymax>
+		</bndbox>
+	</object>
+</annotation>

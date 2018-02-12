@@ -1,0 +1,26 @@
+<annotation>
+	<folder>CameraPhotos</folder>
+	<filename>2017-12-16 03:45:22.856378.jpg</filename>
+	<path>/Volumes/Untitled/CameraPhotos/2017-12-16 03:45:22.856378.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>352</width>
+		<height>240</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>203</xmin>
+			<ymin>148</ymin>
+			<xmax>221</xmax>
+			<ymax>165</ymax>
+		</bndbox>
+	</object>
+</annotation>
