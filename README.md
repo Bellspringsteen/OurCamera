@@ -17,7 +17,7 @@ The training data folder has a series of images and training annotations.
 
 * Run ./generate_tfrecordfinal --folder=path/to/data_dir --train_ratio=.70
 This will create a test.record and train.record file
-* Copy 
+* Copy Model from 
 * In three seperate command line windowns run
     1)python object_detection/train.py --logtostderr --pipeline_config_path=/path/data/faster_rcnn_resnet101_cars.config --train_dir=/path/to/models/model/train
     2)python object_detection/eval.py --logtostderr --pipeline_config_path=/path/data/faster_rcnn_resnet101_cars.config --checkpoint_dir=/path/data/models/model/train --eval_dir=/path/data/models/model/eval
@@ -29,4 +29,8 @@ This will create a test.record and train.record file
     --input_type image_tensor --pipeline_config_path /path/data/models/faster_rcnn_resnet101_cars.config --trained_checkpoint_prefix /path/data/models/model/train/model.ckpt-18557 --output_directory output_inference_graph.pb
 * run downloadimages.py to create a folder of images. 
 * run analyze.py to analyze the images
+
+![Alt text](blockedlanes.gif?raw=true "Left: Identifying Vehicles Right: Identifying Blocked Lanes")
+
+
 
