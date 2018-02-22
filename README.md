@@ -15,20 +15,56 @@ The training data folder has a series of images and training annotations.
 
 ## Run
 
-* Run ./generate_tfrecordfinal --folder=path/to/data_dir --train_ratio=.70
-This will create a test.record and train.record file
-* Copy Model from 
-* In three seperate command line windowns run
-    1)python object_detection/train.py --logtostderr --pipeline_config_path=/path/data/faster_rcnn_resnet101_cars.config --train_dir=/path/to/models/model/train
-    2)python object_detection/eval.py --logtostderr --pipeline_config_path=/path/data/faster_rcnn_resnet101_cars.config --checkpoint_dir=/path/data/models/model/train --eval_dir=/path/data/models/model/eval
-    3)tensorboard --logdir=/path/models/model/
+Create a `test.record` file and a `train.record` file:
+
+```
+./generate_tfrecordfinal --folder=path/to/data_dir --train_ratio=.70
+```
+
+Copy Model from `?`
+
+In three seperate command line windows run:
+
+1)
+
+```
+python object_detection/train.py \
+    --logtostderr \
+    --pipeline_config_path=/path/data/faster_rcnn_resnet101_cars.config \
+    --train_dir=/path/to/models/model/train
+```
+
+2)
     
-    After a thousand or so steps you should be getting results. Look at your tensorflow eval images to gauge when to stop. FYI it took my 4770k intel i7 about 24 hours to train
-* Create a frozen version of your graph by selecting a checkpoint
-    ython object_detection/export_inference_graph.py \
-    --input_type image_tensor --pipeline_config_path /path/data/models/faster_rcnn_resnet101_cars.config --trained_checkpoint_prefix /path/data/models/model/train/model.ckpt-18557 --output_directory output_inference_graph.pb
-* run downloadimages.py to create a folder of images. 
-* run analyze.py to analyze the images
+```
+python object_detection/eval.py \
+    --logtostderr \
+    --pipeline_config_path=/path/data/faster_rcnn_resnet101_cars.config \
+    --checkpoint_dir=/path/data/models/model/train \
+    --eval_dir=/path/data/models/model/eval
+```
+        
+3)
+
+```
+tensorboard --logdir=/path/models/model/
+```
+
+After a thousand or so steps you should be getting results. Look at your tensorflow eval images to gauge when to stop. FYI it took my `4770k Intel i7` about `24 hours` to train.
+
+Create a frozen version of your graph by selecting a checkpoint:
+
+```
+python object_detection/export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path /path/data/models/faster_rcnn_resnet101_cars.config \
+    --trained_checkpoint_prefix /path/data/models/model/train/model.ckpt-18557 \
+    --output_directory output_inference_graph.pb
+```
+
+Run `downloadimages.py` to create a folder of images.
+
+Run `analyze.py` to analyze the images
 
 ![Alt text](blockedlanes.gif?raw=true "Left: Identifying Vehicles Right: Identifying Blocked Lanes")
 
