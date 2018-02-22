@@ -6,8 +6,9 @@ and graphs for the amount of time bicycle lanes and bus stops are blocked by veh
 
 Example usage:
     ./analyzeimages \
-        -path_images /path/to/images
+        -path_images ./data/rawimages/
         -path_labels_map data/car_label_map.pbtxt
+        -save_directory data/processedimages/
 """
 
 import sys
@@ -38,7 +39,7 @@ import scipy.misc
 
 
 def processimages(path_images_dir, path_labels_map,save_directory):
-    pathcpkt = 'data/frozen_inference_graph.pb'
+    pathcpkt = 'data/output_inference_graph.pb/frozen_inference_graph.pb'
     csv_file = 'data/csvfile.csv'
     num_classes = 6
 
@@ -57,9 +58,9 @@ def processimages(path_images_dir, path_labels_map,save_directory):
     category_index = label_map_util.create_category_index(categories)
 
     f = open(csv_file, 'w')
-    f.write(
-        'timestamp,number cars in bike lane, number trucks in bike lane, '
-        'number cars in bus stop, number trucks in bus stop\n')
+    #f.write(
+    #    'timestamp,number cars in bike lane, number trucks in bike lane, '
+    #    'number cars in bus stop, number trucks in bus stop\n')
 
     def load_image_into_numpy_array(imageconvert):
         (im_width, im_height) = imageconvert.size
@@ -88,8 +89,11 @@ def processimages(path_images_dir, path_labels_map,save_directory):
             pathrightlane = mpltPath.Path(polygon_right_lane)
             pathleftlane = mpltPath.Path(polygon_left_lane)
             pathbuslane = mpltPath.Path(polygon_bus_lane)
-
+            x = 0
             for testpath in os.listdir(path_images_dir):
+                x += 1
+                if (x>5):
+                    break
 
                 start_time = time.time()
                 timestamp = testpath.split(".jpg")[0]
@@ -239,7 +243,7 @@ def buildsaveplot(list_to_graph, title):
     plt.ylim([0, 100.0])
     ax = plt.gca()
     ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f%%'))
-    plt.savefig(title.replace(" ", "") + ".png", bbox_inches='tight')
+    plt.savefig("output/"+title.replace(" ", "") + ".png", bbox_inches='tight')
     plt.close()
 
 
@@ -318,5 +322,5 @@ if __name__ == '__main__':
     parser.add_argument('-save_directory', help='the directory you want to save the annotated images to')
     args = parser.parse_args()
     csv_file = processimages(args.path_images,args.path_labels_map,args.save_directory)
-    #analyzeresults('data/analysis2.csv')
+    #analyzeresults('data/analysis10days.csv')
     analyzeresults(csv_file)

@@ -7,7 +7,7 @@ Each jpg image file should contain a corresponding label file with the same name
 A ratio of test to training should be specified i.e. .70
 
 Example usage:
-    ./generate_tfrecordfinal \
+    ./generate_tfrecord \
         --folder=path/to/data_dir \
         --train_ratio=.70
 

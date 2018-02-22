@@ -1,0 +1,44 @@
+item {
+  id: 1
+  name: 'car'
+}
+
+item {
+  id: 2
+  name: 'truck'
+}
+
+item {
+  id: 3
+  name: 'bus'
+}
+
+item {
+  id: 4
+  name: 'ups'
+}
+
+item {
+  id: 5
+  name: 'pedestrian'
+}
+
+item {
+  id: 6
+  name: 'bicycle'
+}
+
+item {
+  id: 7
+  name: 'police'
+}
+
+item {
+  id: 8
+  name: 'Blocking Bike Lane'
+}
+
+item {
+  id: 9
+  name: 'Blocking Bus Stop'
+}
