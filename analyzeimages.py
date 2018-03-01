@@ -89,11 +89,7 @@ def processimages(path_images_dir, path_labels_map,save_directory):
             pathrightlane = mpltPath.Path(polygon_right_lane)
             pathleftlane = mpltPath.Path(polygon_left_lane)
             pathbuslane = mpltPath.Path(polygon_bus_lane)
-            x = 0
             for testpath in os.listdir(path_images_dir):
-                x += 1
-                if (x>5):
-                    break
 
                 start_time = time.time()
                 timestamp = testpath.split(".jpg")[0]
@@ -248,9 +244,7 @@ def buildsaveplot(list_to_graph, title):
 
 
 def analyzeresults(csv_file):
-    total_time_secs, total_time_bike_lane_blocked_by_cars_secs, total_time_bike_lane_blocked_by_trucks_secs, \
-        total_time_bike_lane_blocked_secs, total_time_bus_stop_blocked_by_cars_secs, \
-        total_time_bus_stop_blocked_by_trucks_secs, total_time_bus_stop_blocked_secs = 0, 0, 0, 0, 0, 0, 0
+    total_time_secs, total_time_bike_lane_blocked_secs, total_time_bus_stop_blocked_secs = 0, 0, 0
 
     weekdaytotalseconds = [1] * 24  # where we are going to store how many seconds worth of images there are
     weekendtotalseconds = [1] * 24  # for each hour this is necessary beecause we may be missing images
@@ -321,6 +315,6 @@ if __name__ == '__main__':
     parser.add_argument('-path_labels_map', help='the file with the integer to label map')
     parser.add_argument('-save_directory', help='the directory you want to save the annotated images to')
     args = parser.parse_args()
-    csv_file = processimages(args.path_images,args.path_labels_map,args.save_directory)
-    #analyzeresults('data/analysis10days.csv')
+    #csv_file = processimages(args.path_images,args.path_labels_map,args.save_directory)
+    analyzeresults('data/analysis10days.csv')
     analyzeresults(csv_file)
