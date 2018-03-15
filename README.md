@@ -1,5 +1,7 @@
 # OurCamera
 
+[Read About Project Here](https://medium.com/@alex.morgan.bell/drivers-are-breaking-the-law-slowing-commutes-and-endangering-lives-i-can-prove-it-and-fix-it-9fe1f9a101b9)
+
 This project uses Google's TensorFlow Machine learning package to identify 
 and categorize types of vehicles on NYC streets. 
 
