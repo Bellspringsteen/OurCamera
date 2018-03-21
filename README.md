@@ -20,7 +20,7 @@ The training data folder has a series of images and training annotations.
 Create a `test.record` file and a `train.record` file:
 
 ```
-./generate_tfrecord --folder=path/to/data_dir --train_ratio=.70
+python generate_tfrecord.py -folder=path/to/data_dir -train_ratio=.70
 ```
 
 Download [COCO-pretrained Faster R-CNN with Resnet-101 model](http://storage.googleapis.com/download.tensorflow.org/models/object_detection/faster_rcnn_resnet101_coco_11_06_2017.tar.gz)
@@ -41,7 +41,7 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 1)
 
 ```
-python models-master/research/object_detection/train.py     --logtostderr    
+python models/research/object_detection/train.py     --logtostderr    
     --pipeline_config_path=./data/faster_rcnn_resnet101_cars.config  
     --train_dir=./data/models/model/train
 ```
@@ -49,7 +49,7 @@ python models-master/research/object_detection/train.py     --logtostderr
 2)
     
 ```
-python models-master/research/object_detection/eval.py     --logtostderr    
+python models/research/object_detection/eval.py     --logtostderr    
     --pipeline_config_path=./data/faster_rcnn_resnet101_cars.config    
     --checkpoint_dir=./data/models/model/train     
     --eval_dir=./data/models/model/eval

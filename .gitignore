@@ -1,2 +1,10 @@
 .DS_Store
 data/.DS_Store
+.idea
+cocoapi
+data/models
+data/test.record
+data/train.record
+models-master
+models
+tensorflow

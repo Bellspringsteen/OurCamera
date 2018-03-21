@@ -25,7 +25,7 @@ import io
 import tensorflow as tf
 import sys
 import xml.etree.ElementTree as eT
-sys.path.append('./models-master/research/')
+sys.path.append('./models/research/')
 from object_detection.utils import dataset_util
 
 
